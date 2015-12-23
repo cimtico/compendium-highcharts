@@ -1,4 +1,5 @@
 require 'lazy_high_charts'
+require 'lazy_high_charts/high_chart'
 
 module Compendium
   module ChartProvider
@@ -11,6 +12,7 @@ module Compendium
           yield(f, data)
         end
 
+=begin
         @chart_globals = ::LazyHighCharts::HighChartGlobals.new do |f|
           f.global(useUTC: false)
           f.chart(
@@ -29,6 +31,7 @@ module Compendium
           f.lang(thousandsSep: ",")
           f.colors(["#90ed7d", "#f7a35c", "#8085e9", "#f15c80", "#e4d354"])
         end
+=end
       end
 
       def render(template, container)

@@ -16,11 +16,11 @@ end
       f.xAxis(categories: data.map { |r| r['purchase_date'] })
       f.series(name: 'Total', yAxis: 0, data: data.map { |r| r['total'] })
       f.series(name: 'Taxes', yAxis: 0, data: data.map { |r| r['taxes'] })
-      f.series(name: 'Teams', yAxis: 1, data: data.map { |r| r['teams'] }, type: 'line')
+      f.series(name: 'Items', yAxis: 1, data: data.map { |r| r['items'] }, type: 'line')
 
       f.yAxis [
                   {:title => {:text => 'Dollars'}, labels: {format: '${value}'}},
-                  {:title => {:text => 'Teams'}, opposite: true},
+                  {:title => {:text => 'Items'}, opposite: true},
               ]
 
 

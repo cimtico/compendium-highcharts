@@ -1,3 +1,5 @@
+require 'lazy_high_charts'
+
 module Compendium
   module ChartProvider
     # Uses the lazy-highcharts gem to provide charting
@@ -5,11 +7,11 @@ module Compendium
       def initialize(type, data, params = {}, &setup_proc)
         @chart_id = "highchart-#{rand(10)}"
 
-        @chart = LazyHighCharts::HighChart.new(type) do |f|
+        @chart = ::LazyHighCharts::HighChart.new(type) do |f|
           yield(f, data)
         end
 
-        @chart_globals = LazyHighCharts::HighChartGlobals.new do |f|
+        @chart_globals = ::LazyHighCharts::HighChartGlobals.new do |f|
           f.global(useUTC: false)
           f.chart(
               backgroundColor: {

@@ -35,8 +35,8 @@ module Compendium
       end
 
       def render(template, container)
-        template.high_chart_globals(@chart_globals) +
-            template.high_chart(@chart_id, @chart)
+        template.high_chart_globals(@chart_globals)
+            #template.high_chart(@chart_id, @chart)
       end
 
       private

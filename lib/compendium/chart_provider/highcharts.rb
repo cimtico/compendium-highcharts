@@ -1,6 +1,6 @@
 module Compendium
   module ChartProvider
-    # Uses the amcharts.rb gem to provide charting
+    # Uses the lazy-highcharts gem to provide charting
     class HighCharts < Compendium::AbstractChartProvider
       def initialize(type, data, params = {}, &setup_proc)
         @chart_id = "highchart-#{rand(10)}"

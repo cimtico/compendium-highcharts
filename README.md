@@ -1,15 +1,13 @@
-# Compendium::Amcharts [![Gem Version](https://badge.fury.io/rb/compendium-amcharts.svg)](http://badge.fury.io/rb/compendium-amcharts)
-
-AmCharts.rb charting provider for Compendium reports.
+HighCharts.rb charting provider for Compendium reports.
 
 ## Usage
 
-This gem adds amcharts.rb as a provider for rendering charts in Compendium. If multiple providers are loaded,
-AmCharts.rb can be forced by adding the following to an initializer:
+This gem adds highcharts as a provider for rendering charts in Compendium. If multiple providers are loaded,
+HighCharts can be forced by adding the following to an initializer:
 
 ```ruby
 Compendium.configure do |config|
-  config.chart_provider = :AmCharts
+  config.chart_provider = :HighCharts
 end
 ```
 
@@ -17,7 +15,7 @@ end
 
 Add this line to your application's Gemfile:
 
-    gem 'compendium-amcharts'
+    gem 'compendium-highcharts'
 
 And then execute:
 
@@ -25,7 +23,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install compendium-amcharts
+    $ gem install compendium-highcharts
 
 ## Contributing
 

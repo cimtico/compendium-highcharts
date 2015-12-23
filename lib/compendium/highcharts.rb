@@ -1,4 +1,4 @@
-require 'compendium/amcharts/version'
+require 'compendium/highcharts/version'
 require 'compendium'
 require 'compendium/abstract_chart_provider'
 

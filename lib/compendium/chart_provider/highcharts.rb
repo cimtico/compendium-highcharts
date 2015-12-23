@@ -6,7 +6,7 @@ module Compendium
     # Uses the lazy-highcharts gem to provide charting
     class HighCharts < Compendium::AbstractChartProvider
       def initialize(type, data, params = {}, &setup_proc)
-        @chart_id = "highchart-#{rand(10)}"
+        @chart_id = "highchart-#{type}-#{rand(10)}"
 
         @chart = ::LazyHighCharts::HighChart.new(type) do |f|
           yield(f, data)

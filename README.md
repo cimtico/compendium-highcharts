@@ -11,6 +11,26 @@ Compendium.configure do |config|
 end
 ```
 
+```ruby
+    @report.invoices_over_time.render_chart(self, 'graph') do |f, data|
+      f.xAxis(categories: data.map { |r| r['purchase_date'] })
+      f.series(name: 'Total', yAxis: 0, data: data.map { |r| r['total'] })
+      f.series(name: 'Taxes', yAxis: 0, data: data.map { |r| r['taxes'] })
+      f.series(name: 'Teams', yAxis: 1, data: data.map { |r| r['teams'] }, type: 'line')
+
+      f.yAxis [
+                  {:title => {:text => 'Dollars'}, labels: {format: '${value}'}},
+                  {:title => {:text => 'Teams'}, opposite: true},
+              ]
+
+
+      f.legend(align: 'right', verticalAlign: 'top', y: 75, x: -50, layout: 'vertical')
+      f.chart({defaultSeriesType: 'area'})
+    end
+```
+
+For more information about configuration please visit https://github.com/michelson/lazy_high_charts
+
 ## Installation
 
 Add this line to your application's Gemfile:
